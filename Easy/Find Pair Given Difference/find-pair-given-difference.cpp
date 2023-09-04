@@ -30,20 +30,23 @@ int main()
 
 bool findPair(int arr[], int size, int n){
     //code
-    int left=0  , right =1;
-    sort(arr, arr+size);
-    while(left<=right && right <= size-1){
-        int diff = arr[right]-arr[left];
-        
-        if(diff==n && left!= right){
+    sort(arr,arr+size);
+    int i =0 , j = 1;
+    while(i<=j && j<= size-1){
+        int diff = arr[j]-arr[i];
+        if(diff== n && j!=i) {
             return true;
         }
-        else if(diff>n){
-            left++;
+        else if(diff > n){
+            i++;
         }
         else{
-            right++;
+            j++;
         }
     }
     return false;
+    
 }
+
+// 2 3 5 5 20 80
+
